@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 10,
     marginBottom: 30,
+    borderWidth: 3,
   },
   spellContainer: {
     justifyContent: 'center',

@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     backgroundColor: 'black',
     flex: 1,
+    borderWidth: 3,
   }
 });
 

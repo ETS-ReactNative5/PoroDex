@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   imageStyle: {
-
     height: 80,
     width: 80,
     borderRadius: 10,

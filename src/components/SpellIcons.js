@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     height: 65,
     width: 65,
     borderRadius: 10,
+    borderWidth: 3,
     margin: 5
   },
   textStyle: {
