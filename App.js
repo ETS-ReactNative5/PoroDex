@@ -9,8 +9,11 @@ import DetailsScreen from './src/screens/DetailsScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import SpellScreen from './src/screens/SpellScreen';
+import { LogBox } from 'react-native';
 
 const Stack = createNativeStackNavigator();
+
+LogBox.ignoreAllLogs();
 
 const MyTheme = {
   colors: {

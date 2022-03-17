@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { auth } from '../../firebase-config';
+import * as WebBrowser from 'expo-web-browser';
 
 const ProfileScreen = ({ navigation }) => {
 
   const handleSignOut = () => {
+    WebBrowser.dismissAuthSession()
     auth
       .signOut()
       .then(() => {

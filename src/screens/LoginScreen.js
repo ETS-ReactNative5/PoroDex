@@ -1,10 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { KeyboardAvoidingView, TouchableOpacity, StyleSheet, Text, TextInput, View, Image } from 'react-native';
 import { auth } from '../../firebase-config';
+import * as Google from 'expo-auth-session/providers/google';
+import * as WebBrowser from 'expo-web-browser';
+
+WebBrowser.maybeCompleteAuthSession();
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [accessToken, setAccessToken] = useState();
+  const [userInfo, setUserInfo] = useState();
+
+  const [request, response, promptAsync] = Google.useAuthRequest({
+    expoClientId: '226313071936-3sbg10vdraghrhvc08hdbqjl08t277eo.apps.googleusercontent.com'
+  })
+
+  useEffect(() => {
+    if (response?.type === 'success') {
+      setAccessToken(response.authentication.accessToken);
+    }
+  }, [response])
+
+  const getUserData = async () => {
+    let userInfoResponse = await fetch('https://www.googleapis.com/userinfo/v2/me', {
+      headers: { Authorization: `Bearer ${accessToken}`}
+    });
+
+    userInfoResponse.json().then(data => {
+      setUserInfo(data);
+    });
+  }
+
+  useEffect(() => {
+    getUserData();
+  }, [accessToken])
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
@@ -41,6 +71,7 @@ const LoginScreen = ({ navigation }) => {
       style={styles.container}
       behavior="padding"
     >
+      {console.log(userInfo)}
       <Image style={styles.image} source={require('../../assets/poro.png')}/>
       <View style={styles.inputContainer}>
         <TextInput
@@ -71,6 +102,13 @@ const LoginScreen = ({ navigation }) => {
         >
           <Text style={styles.buttonOutlineText}>Register</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          onPress={accessToken ? navigation.navigate('Champions') : () => { promptAsync({showInRecents: true})}}
+          style={[styles.button, styles.buttonOutline]}
+        >
+          <Text style={styles.buttonOutlineText}>Login With Google</Text>
+        </TouchableOpacity>
+
       </View>
     </KeyboardAvoidingView>
   )
@@ -79,7 +117,6 @@ const LoginScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
     alignItems: 'center',
   },
   image: {
@@ -128,6 +165,9 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontSize: 16,
   },
+  buttonGoogle: {
+
+  }
 });
 
 export default LoginScreen;
