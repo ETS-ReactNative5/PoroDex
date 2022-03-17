@@ -1,6 +1,6 @@
 # PoroDex
 
-https://user-images.githubusercontent.com/94568342/158880515-0b07d7ce-9856-428d-8f09-38b094148f9e.mp4
+![PoroDex](https://i.makeagif.com/media/3-17-2022/LNpa6i.gif)
 
 A mobile application that utilizes the Riot API to display champion data and tips and tricks related to that project.
 Project done with 48 hours to test both my technical and mental ability
@@ -19,6 +19,7 @@ Project done with 48 hours to test both my technical and mental ability
 
 ### Champion Details Page
 
+* Features a Rotation of All Champion Skins
 * Features Lore of Champion
 * Displays Enemy/Ally Tips and Tricks
 * Spell Icons Featured allow for an indepth look at each Spell
