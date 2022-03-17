@@ -1,7 +1,6 @@
 node_modules/
 .expo/
 dist/
-assets/dragontail-12.5.1
 npm-debug.*
 *.jks
 *.p8
