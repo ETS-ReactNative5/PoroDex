@@ -1,6 +1,6 @@
 # PoroDex
 
-![Screenshot](https://i.makeagif.com/media/3-17-2022/LNpa6i.gif)
+![gif](https://i.makeagif.com/media/3-17-2022/LNpa6i.gif)
 
 A mobile application that utilizes the Riot API to display champion data and tips and tricks related to that project.
 Project done with 48 hours to test both my technical and mental ability
