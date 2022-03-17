@@ -3,30 +3,30 @@
 ![gif](https://i.makeagif.com/media/3-17-2022/hF0JSb.gif)
 
 A mobile application that utilizes the Riot API to display champion data and tips and tricks related to that project.
-Project done with 48 hours to test both my technical and mental ability
+Project done with 48 hours to challange my scoping and development capabilities
 
 ## :heavy_check_mark: Features
 
 ### Login Page
 
-* Features Authentication using Firebase
-* Allows for Google OAuth Login
+* Authentication using Firebase
+* Allows for Google OAuth login
 
 ### Champion Page
 
-* Dynamically Search Champions
-* Each Champion Icon is a Button that will redirect the user to a page that displays more detailed Champion Info
+* Dynamically search champions
+* Each champion icon is a button that will redirect the user to a page that displays more detailed Champion info
 
 ### Champion Details Page
 
-* Features a Rotation of All Champion Skins
-* Features Lore of Champion
-* Displays Enemy/Ally Tips and Tricks
-* Spell Icons Featured allow for an indepth look at each Spell
+* Features a rotation of all Champion skins
+* Features lore of Champion
+* Displays enemy/ally tips and tricks
+* Spell icons featured allow for an indepth look at each Spell
 
 ### Spell Page
 
-* Features Detailed Information about each Spell
+* Features detailed information about each spell
 
 ## :heavy_check_mark: Installation
 
